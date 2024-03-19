@@ -31,6 +31,9 @@ router.post(url,function(req,res){
     if(superHeros == undefined){
         res.status(409).send(`Un super Héros avec l'id ${req.body.id} existe déjà`);
     }
+    else if(typeof superHeros == "string"){
+        res.status(400).send(superHeros);
+    }
     else{
         res.status(201).send(`Création du super héros réussie`);
     }
@@ -43,6 +46,9 @@ router.put(`${url}/:id`,function(req,res){
     let superHeros = superHerosFichier.update(req.body,req.params.id);
     if(superHeros == undefined){
         res.status(404).send(`Le super héros avec l'id ${req.params.id} n'existe pas.`);
+    }
+    else if(typeof superHeros == "string"){
+        res.status(400).send(superHeros);
     }
     else{
         res.status(201).send(superHeros);

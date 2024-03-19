@@ -1,4 +1,4 @@
-export class superHeros {
+ class SuperHeros {
     id;
     nom;
     pouvoir;
@@ -50,5 +50,6 @@ export class superHeros {
         return {id:this.id, nom:this.nom, pouvoir:this.pouvoir, age:this.age, email:this.email}
     }
 
-
 }
+
+export default {SuperHeros}
