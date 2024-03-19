@@ -1,4 +1,5 @@
 import express from 'express';
+import router from './routes/router.js';
 
 //création d'une constante app qui va contenir l'application express.js
 const app = express();
@@ -11,3 +12,4 @@ app.listen(port, () => console.log(`En écoute sur le port ${port}!`));
 
 //création de l'application express.js
 app.use(express.json());
+app.use("/api/",router.router)
